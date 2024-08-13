@@ -1,0 +1,35 @@
+<ng-container *ngIf="isLoggedIn;">
+  <app-add-url></app-add-url>
+</ng-container>
+
+<table mat-table [dataSource]=" dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="originalUrl">
+    <th mat-header-cell *matHeaderCellDef> OriginalUrl </th>
+    <td mat-cell *matCellDef="let element">
+      <a [href]="element.originalUrl" target="_blank">{{element.originalUrl}}</a>
+    </td>
+  </ng-container>
+
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="shortedUrl">
+    <th mat-header-cell *matHeaderCellDef> ShortedUrl </th>
+    <td mat-cell *matCellDef="let element">
+      <a [href]="element.originalUrl" target="_blank">{{element.shortedUrl}}</a>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

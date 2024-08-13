@@ -1,0 +1,10 @@
+.form {
+  min-width: 150px;
+  width: 100%;
+  align-items: center;
+}
+
+.full-width {
+  width: 100%;
+  align-items: center;
+}

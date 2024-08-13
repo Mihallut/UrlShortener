@@ -1,0 +1,16 @@
+<mat-toolbar>
+  <span (click)="navigateToHome()">Url Shortener</span>
+  <span class="spacer"></span>
+  <ng-container *ngIf="isLoggedIn; else loginButton">
+    <button mat-button [matMenuTriggerFor]="menu">{{ userInfo?.name }}</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">Log-out</button>
+    </mat-menu>
+  </ng-container>
+  <ng-template #loginButton>
+    <button mat-icon-button class="icon login-icon" (click)="navigateToLogin()">
+      <mat-icon>login</mat-icon>
+    </button>
+  </ng-template>
+</mat-toolbar>
+<router-outlet></router-outlet>

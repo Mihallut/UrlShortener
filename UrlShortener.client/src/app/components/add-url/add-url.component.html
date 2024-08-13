@@ -1,0 +1,16 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title> Add new url</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="form" [formGroup]="reduceForm">
+      <mat-form-field class="full-width">
+        <mat-label>Original url</mat-label>
+        <input matInput formControlName="url">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button color="accent" (click)="onReduce()">Reduce</button>
+  </mat-card-actions>
+</mat-card>
